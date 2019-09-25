@@ -1,0 +1,17 @@
+{% extends 'reclamos/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if true %}
+            <div class="date">
+                {{ reclamos.creado }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'reclamo_edit' pk=reclamos.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+
+        <h2>{{ reclamos.titulo }}</h2>
+        <p>{{ reclamos.descripcion|linebreaksbr }}</p>
+        <p>Inmueble: {{ reclamos.inmueble }}</p>
+        <p>Unidad: {{ reclamos.unidad }}</p>
+    </div>
+{% endblock %}
